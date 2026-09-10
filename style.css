@@ -1,0 +1,3236 @@
+/* =========================================================
+   SPROUT PERPETUAL DEX
+   GLOBAL STYLES
+========================================================= */
+
+/* =========================================================
+   SPROUT PERPETUAL DEX
+   NAVBAR + MOBILE MENU
+========================================================= */
+
+:root {
+    --bg: #050706;
+    --bg-soft: #080b09;
+    --bg-card: #0b0f0d;
+    --bg-card-hover: #101511;
+
+    --green: #b7f34a;
+    --green-bright: #c9ff68;
+
+    --white: #f5f7f5;
+    --text: #a5ada8;
+    --muted: #68716c;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.12);
+
+    --container: 1240px;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 76px;
+
+    padding: 0 4.5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(5, 7, 6, 0.88);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   NAV LEFT
+========================================================= */
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+.logo:hover {
+    color: var(--green);
+}
+
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(183, 243, 74, 0.22);
+    border-radius: 10px;
+
+    background: rgba(183, 243, 74, 0.05);
+}
+
+
+.logo-mark svg {
+    width: 27px;
+    height: 27px;
+
+    overflow: visible;
+}
+
+
+.sprout-stem {
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+
+.sprout-leaf {
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 2.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.desktop-nav a,
+.nav-link {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+}
+
+.desktop-nav a:hover,
+.nav-link:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   NAV RIGHT
+========================================================= */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.nav-link i {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   START TRADE BUTTON
+========================================================= */
+
+.launch-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 10px 17px;
+
+    border-radius: 7px;
+
+    background: var(--green);
+    color: #071006;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.launch-button:hover {
+    background: var(--green-bright);
+    transform: translateY(-1px);
+}
+
+.launch-button i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-button {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: transparent;
+    color: var(--white);
+
+    cursor: pointer;
+
+    font-size: 21px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+    color: var(--green);
+
+    border-color: rgba(183, 243, 74, 0.35);
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.mobile-menu-button i {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-nav {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(320px, 85vw);
+    height: 100vh;
+
+    padding: 100px 30px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    background: #080b09;
+
+    border-left: 1px solid var(--border);
+
+    z-index: 3000;
+
+    transform: translateX(100%);
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* OPEN STATE */
+
+.mobile-nav.active {
+    transform: translateX(0);
+
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MOBILE NAV LINKS
+========================================================= */
+
+.mobile-nav > a {
+    color: var(--text);
+
+    font-size: 17px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.mobile-nav > a:hover {
+    color: var(--green);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MOBILE CLOSE BUTTON
+========================================================= */
+
+.mobile-close {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--white);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.mobile-close:hover {
+    color: var(--green);
+
+    border-color: rgba(183, 243, 74, 0.35);
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.mobile-close i {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE LAUNCH BUTTON
+========================================================= */
+
+.mobile-launch {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 5px;
+
+    padding: 13px;
+
+    background: var(--green);
+
+    color: #071006 !important;
+
+    border-radius: 7px;
+
+    font-weight: 700;
+}
+
+.mobile-launch:hover {
+    color: #071006 !important;
+
+    background: var(--green-bright);
+}
+
+
+/* =========================================================
+   LOCK PAGE WHEN MENU IS OPEN
+========================================================= */
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+[data-theme="light"] {
+    --bg: #f7f9f6;
+    --bg-soft: #eef2ed;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f4ef;
+
+    --green: #6f9f18;
+    --green-bright: #7eaf20;
+
+    --white: #111510;
+    --text: #59615b;
+    --muted: #7b847d;
+
+    --border: rgba(0, 0, 0, 0.09);
+    --border-light: rgba(0, 0, 0, 0.14);
+}
+
+
+[data-theme="light"] .navbar {
+    background: rgba(247, 249, 246, 0.88);
+}
+
+
+[data-theme="light"] .mobile-nav {
+    background: var(--bg-card);
+}
+
+
+[data-theme="light"] .mobile-menu-button {
+    background: var(--bg-card);
+}
+
+
+[data-theme="light"] .mobile-close {
+    background: var(--bg-card);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--bg-card);
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--green);
+
+    border-color: rgba(183, 243, 74, 0.35);
+
+    background: var(--bg-card-hover);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .desktop-nav {
+        gap: 20px;
+    }
+
+    .nav-left {
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .desktop-nav,
+    .nav-link,
+    .launch-button {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-mark {
+        width: 35px;
+        height: 35px;
+    }
+
+    .mobile-nav {
+        width: 85vw;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: min(var(--container), 91%);
+    min-height: 700px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 0 80px;
+
+    position: relative;
+}
+
+
+/* Background glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 5%;
+    top: 80px;
+
+    background: rgba(183, 243, 74, 0.06);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO INNER
+========================================================= */
+
+.hero-inner {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.hero-copy {
+    max-width: 570px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 25px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(183, 243, 74, 0.8);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1 {
+    font-size: clamp(60px, 7vw, 100px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-copy p {
+    max-width: 500px;
+
+    margin-top: 30px;
+
+    color: var(--text);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 13px 19px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.primary-button {
+    background: var(--green);
+    color: #071006;
+}
+
+.primary-button:hover {
+    background: var(--green-bright);
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    border: 1px solid var(--border-light);
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.secondary-button:hover {
+    border-color: rgba(183, 243, 74, 0.35);
+    color: var(--green);
+}
+
+
+/* =========================================================
+   HERO MARKET PANEL
+========================================================= */
+
+.hero-market-panel {
+    min-height: 430px;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.45);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-market-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -160px;
+    top: -160px;
+
+    border-radius: 50%;
+
+    background: rgba(183, 243, 74, 0.09);
+
+    filter: blur(80px);
+}
+
+
+/* =========================================================
+   MARKET PANEL TOP
+========================================================= */
+
+.panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 2;
+}
+
+.market-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.market-name strong {
+    display: block;
+    font-size: 14px;
+}
+
+.market-name span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   COIN ICON
+========================================================= */
+
+.coin-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.coin-icon.small {
+    width: 30px;
+    height: 30px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MARKET CHANGE
+========================================================= */
+
+.market-change {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.positive {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   MARKET PRICE
+========================================================= */
+
+.market-price {
+    margin-top: 28px;
+
+    font-size: 31px;
+    font-weight: 750;
+
+    letter-spacing: -1px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CHART AREA
+========================================================= */
+
+.chart-area {
+    height: 220px;
+
+    margin-top: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.chart-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+}
+
+.price-chart {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    z-index: 2;
+}
+
+.chart-line {
+    fill: none;
+
+    stroke: var(--green);
+
+    stroke-width: 2.5;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(183, 243, 74, 0.45)
+        );
+}
+
+.chart-fill {
+    fill: url(#chartGradient);
+}
+
+
+/* =========================================================
+   MARKET DATA
+========================================================= */
+
+.market-data {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    padding-top: 20px;
+}
+
+.market-data div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.market-data span {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+.market-data strong {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MARKET TICKER
+========================================================= */
+
+.market-ticker {
+    width: 100%;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    overflow: hidden;
+
+    background: var(--bg-soft);
+}
+
+.ticker-track {
+    width: max-content;
+    min-width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+
+    padding: 16px 0;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 35px;
+
+    border-right: 1px solid var(--border);
+}
+
+.ticker-item span {
+    color: var(--text);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.ticker-item strong {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.markets-section,
+.trade-section,
+.stats-section,
+.advantages-section {
+    width: min(var(--container), 91%);
+
+    margin: auto;
+
+    padding: 130px 0;
+}
+
+.section-label {
+    color: var(--green);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+}
+
+.section-header h2,
+.trade-heading h2,
+.stats-header h2 {
+    margin-top: 12px;
+
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.text-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    transition: 0.25s ease;
+}
+
+.text-link:hover {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   MARKETS TABLE
+========================================================= */
+
+.markets-table {
+    border-top: 1px solid var(--border);
+}
+
+.table-head,
+.market-row {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1.3fr
+        1.3fr
+        1.3fr
+        1fr;
+
+    align-items: center;
+
+    column-gap: 20px;
+}
+
+.table-head {
+    padding: 16px 18px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.market-row {
+    padding: 19px 18px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+.market-row:hover {
+    background: var(--bg-card);
+}
+
+.market-pair {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   TRADING EXPERIENCE
+========================================================= */
+
+.trade-section {
+    padding-top: 70px;
+}
+
+.trade-heading {
+    max-width: 650px;
+
+    margin-bottom: 45px;
+}
+
+.trade-heading p {
+    max-width: 550px;
+
+    margin-top: 20px;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TRADING TERMINAL
+========================================================= */
+
+.terminal {
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: #070a08;
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   TERMINAL HEADER
+========================================================= */
+
+.terminal-header {
+    height: 58px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-market {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 12px;
+}
+
+.terminal-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.terminal-actions button {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    border-radius: 5px;
+}
+
+.terminal-actions button:hover {
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   TERMINAL BODY
+========================================================= */
+
+.terminal-body {
+    min-height: 500px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 300px;
+}
+
+
+/* =========================================================
+   TERMINAL CHART
+========================================================= */
+
+.terminal-chart {
+    position: relative;
+
+    border-right: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0.015)
+        );
+}
+
+.terminal-placeholder {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: var(--muted);
+}
+
+.terminal-placeholder i {
+    font-size: 30px;
+
+    color: var(--green);
+}
+
+.terminal-placeholder span {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ORDER PANEL
+========================================================= */
+
+.order-panel {
+    padding: 20px;
+
+    background: #090d0b;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   ORDER PANEL HEADER
+========================================================= */
+
+.order-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.order-panel-title {
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.order-panel-subtitle {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ORDER TYPE TABS
+========================================================= */
+
+.order-tabs {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    padding: 4px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+}
+
+.order-tabs button {
+    padding: 9px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.order-tabs button:hover {
+    color: var(--white);
+}
+
+.order-tabs button.active {
+    background: rgba(255, 255, 255, 0.07);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   LONG / SHORT
+========================================================= */
+
+.position-tabs {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 6px;
+
+    margin-top: 12px;
+}
+
+.position-tabs button {
+    min-height: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: 0.2s ease;
+}
+
+.position-tabs button:hover {
+    color: var(--white);
+
+    border-color: var(--border-light);
+}
+
+.position-tabs .long.active {
+    background: rgba(183, 243, 74, 0.12);
+
+    border-color: rgba(183, 243, 74, 0.35);
+
+    color: var(--green);
+}
+
+.position-tabs .short.active {
+    background: rgba(255, 80, 80, 0.10);
+
+    border-color: rgba(255, 80, 80, 0.30);
+
+    color: #ff7777;
+}
+
+
+/* =========================================================
+   ORDER FIELD
+========================================================= */
+
+.order-field {
+    margin-top: 12px;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.order-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.order-label span {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.order-label span:last-child {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   ORDER INPUT
+========================================================= */
+
+.order-input {
+    min-height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.order-input input {
+    width: 100%;
+    min-width: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.order-input input::placeholder {
+    color: var(--muted);
+}
+
+.order-input input::-webkit-outer-spin-button,
+.order-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+.order-input input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.order-input > span {
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.order-input > span:last-child {
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.order-input i {
+    color: var(--green);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LEVERAGE SELECTOR
+========================================================= */
+
+.leverage-options {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 5px;
+}
+
+.leverage-options button {
+    min-height: 36px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.leverage-options button:hover {
+    color: var(--white);
+
+    border-color: var(--border-light);
+}
+
+.leverage-options button.active {
+    background: rgba(183, 243, 74, 0.10);
+
+    border-color: rgba(183, 243, 74, 0.35);
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+========================================================= */
+
+.order-summary {
+    margin-top: 18px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.order-summary div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-summary span {
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.order-summary strong {
+    color: var(--white);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CONNECT WALLET
+========================================================= */
+
+.connect-wallet {
+    width: 100%;
+
+    min-height: 44px;
+
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--green);
+
+    color: #071006;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.connect-wallet:hover {
+    background: var(--green-bright);
+
+    transform: translateY(-1px);
+}
+
+.connect-wallet:active {
+    transform: translateY(0);
+}
+
+.connect-wallet i {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GENERATED CHART
+========================================================= */
+
+.generated-chart {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+.chart-grid-lines line {
+    stroke: rgba(255, 255, 255, 0.05);
+
+    stroke-width: 1;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-section {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.stats-header {
+    margin-bottom: 60px;
+}
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+}
+
+.stat-item:first-child {
+    padding-left: 0;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-item span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.stat-item strong {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   ADVANTAGES
+========================================================= */
+
+.advantages-grid {
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.advantage {
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+}
+
+.advantage:first-child {
+    padding-left: 0;
+}
+
+.advantage:last-child {
+    border-right: none;
+}
+
+.advantage-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    color: var(--green);
+
+    background: rgba(183, 243, 74, 0.04);
+}
+
+.advantage h3 {
+    margin-bottom: 12px;
+
+    font-size: 15px;
+}
+
+.advantage p {
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+    width: min(var(--container), 91%);
+
+    margin: auto;
+
+    padding: 150px 0;
+
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.cta-content h2 {
+    margin-top: 15px;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+.cta-content p {
+    max-width: 480px;
+
+    margin: 25px auto 30px;
+
+    color: var(--text);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    padding: 70px 5% 25px;
+
+    border-top: 1px solid var(--border);
+
+    background: #030504;
+}
+
+.footer-top {
+    max-width: var(--container);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 70px;
+}
+
+.footer-brand p {
+    max-width: 280px;
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-column h4 {
+    margin-bottom: 7px;
+
+    color: var(--white);
+
+    font-size: 11px;
+}
+
+.footer-column a {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: var(--green);
+}
+
+.footer-column i {
+    margin-right: 6px;
+}
+
+.footer-bottom {
+    max-width: var(--container);
+
+    margin: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.footer-bottom div {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-bottom a:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .desktop-nav {
+        gap: 20px;
+    }
+
+    .nav-left {
+        gap: 30px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .hero-copy {
+        max-width: 700px;
+    }
+
+    .hero-market-panel {
+        max-width: 750px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantage:nth-child(2) {
+        border-right: none;
+    }
+
+    .advantage:nth-child(n + 3) {
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-top {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .desktop-nav,
+    .nav-link,
+    .launch-button {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 15vw, 78px);
+
+        letter-spacing: -3px;
+    }
+
+    .hero-copy p {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+
+    /* MARKET PANEL */
+
+    .market-data {
+        gap: 10px;
+    }
+
+    .market-data strong {
+        font-size: 11px;
+    }
+
+
+    /* MARKETS TABLE */
+
+    .table-head {
+        display: none;
+    }
+
+    .market-row {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px;
+
+        padding: 18px 5px;
+    }
+
+    .market-row span:nth-child(3),
+    .market-row span:nth-child(4),
+    .market-row span:nth-child(5) {
+        display: none;
+    }
+
+
+    /* SECTIONS */
+
+    .markets-section,
+    .trade-section,
+    .stats-section,
+    .advantages-section {
+        padding: 90px 0;
+    }
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    /* TERMINAL */
+
+    .terminal-body {
+        grid-template-columns: 1fr;
+    }
+
+    .terminal-chart {
+        min-height: 400px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .order-panel {
+        padding: 18px;
+    }
+
+    .leverage-options {
+        gap: 5px;
+    }
+
+    .leverage-options button {
+        min-height: 38px;
+    }
+
+
+    /* STATS */
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-item {
+        padding: 25px 15px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-item:first-child {
+        padding-left: 15px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-market-panel {
+        padding: 17px;
+
+        border-radius: 10px;
+    }
+
+    .market-price {
+        font-size: 25px;
+    }
+
+    .chart-area {
+        height: 180px;
+    }
+
+    .market-data span {
+        font-size: 8px;
+    }
+
+    .market-data strong {
+        font-size: 10px;
+    }
+
+
+    /* ORDER PANEL */
+
+    .order-panel {
+        padding: 15px;
+    }
+
+    .order-field {
+        padding: 11px;
+    }
+
+    .leverage-options button {
+        font-size: 9px;
+    }
+
+
+    /* ADVANTAGES */
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .advantage {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .advantage:last-child {
+        border-bottom: none;
+    }
+
+
+    /* STATS */
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item {
+        border-right: none;
+    }
+
+
+    /* FOOTER */
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom div {
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================================================
+   PROFESSIONAL TRADING CHART
+========================================================= */
+
+.chart-toolbar {
+    height: 48px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.012);
+}
+
+.chart-timeframes,
+.chart-tools {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.chart-timeframes button,
+.chart-tools button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.chart-timeframes button {
+    padding: 6px 8px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.chart-timeframes button:hover,
+.chart-tools button:hover {
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chart-timeframes button.active {
+    color: var(--green);
+
+    background: rgba(183, 243, 74, 0.08);
+}
+
+.chart-tools button {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CHART CONTAINER
+========================================================= */
+
+.chart-container {
+    height: 405px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #060907;
+}
+
+.chart-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 75px 60px;
+}
+
+
+/* =========================================================
+   Y AXIS
+========================================================= */
+
+.chart-y-axis {
+    position: absolute;
+
+    top: 15px;
+    right: 8px;
+    bottom: 35px;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    pointer-events: none;
+}
+
+.chart-y-axis span {
+    padding: 2px 5px;
+
+    color: var(--muted);
+
+    background: rgba(6, 9, 7, 0.75);
+
+    font-size: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TRADING SVG
+========================================================= */
+
+.trading-chart {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+}
+
+.trading-chart-fill {
+    fill: url(#tradingChartFill);
+}
+
+.trading-chart-line {
+    fill: none;
+
+    stroke: var(--green);
+
+    stroke-width: 2.5;
+
+    vector-effect: non-scaling-stroke;
+
+    filter:
+        drop-shadow(
+            0 0 6px rgba(183, 243, 74, 0.45)
+        );
+}
+
+
+/* =========================================================
+   CURRENT PRICE LINE
+========================================================= */
+
+.current-price-line {
+    stroke: rgba(183, 243, 74, 0.55);
+
+    stroke-width: 1;
+
+    stroke-dasharray: 5 5;
+
+    vector-effect: non-scaling-stroke;
+}
+
+.current-price {
+    position: absolute;
+
+    top: 7px;
+    right: 5px;
+
+    z-index: 10;
+
+    padding: 4px 7px;
+
+    border-radius: 3px;
+
+    background: var(--green);
+
+    color: #071006;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   X AXIS
+========================================================= */
+
+.chart-x-axis {
+    position: absolute;
+
+    left: 15px;
+    right: 65px;
+    bottom: 8px;
+
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+
+    pointer-events: none;
+}
+
+.chart-x-axis span {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   CHART FOOTER
+========================================================= */
+
+.chart-footer {
+    min-height: 43px;
+
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    border-top: 1px solid var(--border);
+
+    background: #070a08;
+}
+
+.chart-footer div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.chart-footer span {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.chart-footer strong {
+    color: var(--text);
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+    .chart-container {
+        height: 360px;
+    }
+
+    .chart-timeframes button:nth-child(4),
+    .chart-timeframes button:nth-child(5),
+    .chart-timeframes button:nth-child(6) {
+        display: none;
+    }
+
+    .chart-footer {
+        gap: 14px;
+        overflow-x: auto;
+    }
+
+    .chart-footer div {
+        flex-shrink: 0;
+    }
+
+        .chart-container {
+        height: 320px;
+    }
+
+    .chart-toolbar {
+        padding: 0 9px;
+    }
+
+    .chart-y-axis span {
+        font-size: 8px;
+    }
+
+    .chart-footer {
+        padding: 0 10px;
+        gap: 12px;
+    }
+
+
+    /* =========================
+   ORDER BOOK + RECENT TRADES
+========================= */
+
+.order-book,
+.recent-trades {
+    background: #090d0b;
+    border-left: 1px solid var(--border);
+    min-width: 0;
+}
+
+.terminal-panel-title {
+    height: 48px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-panel-title span {
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.terminal-panel-title button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.terminal-panel-title button:hover {
+    color: var(--white);
+}
+
+.order-book-head,
+.recent-trades-head {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    padding: 10px 14px;
+    color: var(--muted);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.asks > div,
+.bids > div,
+.trades-list > div {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    padding: 7px 14px;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.asks > div span:first-child {
+    color: #ff7777;
+}
+
+.bids > div span:first-child {
+    color: var(--green);
+}
+
+.asks > div span:not(:first-child),
+.bids > div span:not(:first-child),
+.trades-list span:not(:first-child) {
+    color: var(--text);
+}
+
+.order-book-price {
+    margin: 8px 14px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.order-book-price strong {
+    color: var(--green);
+    font-size: 14px;
+}
+
+.order-book-price span {
+    color: var(--muted);
+    font-size: 8px;
+}
+
+.trade-buy span:first-child {
+    color: var(--green);
+}
+
+.trade-sell span:first-child {
+    color: #ff7777;
+}
+
+.trades-list > div:hover,
+.asks > div:hover,
+.bids > div:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================
+   TERMINAL LAYOUT
+========================= */
+
+.terminal-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 250px 230px;
+    min-height: 500px;
+}
+
+.terminal-chart {
+    min-width: 0;
+}
+
+.order-book,
+.recent-trades {
+    min-height: 500px;
+}
+
+
+/* =========================
+   MOBILE TERMINAL
+========================= */
+
+@media (max-width: 1050px) {
+
+    .terminal-body {
+        grid-template-columns: minmax(0, 1fr) 220px;
+    }
+
+    .recent-trades {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .terminal-body {
+        display: block;
+    }
+
+    .order-book {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        min-height: auto;
+    }
+
+    .order-book-head,
+    .asks,
+    .bids {
+        max-width: 100%;
+    }
+
+    .recent-trades {
+        display: block;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .order-book-head,
+    .recent-trades-head {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .asks > div,
+    .bids > div,
+    .trades-list > div {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+.terminal-header {
+    position: relative;
+    min-height: 72px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+    background: #080b09;
+}
+
+
+/* =========================
+   ACTIVE MARKET
+========================= */
+
+.terminal-market {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.market-selector {
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.market-selector > i {
+    margin-left: 3px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.market-icon,
+.market-option-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    background: #101511;
+    color: var(--green);
+}
+
+.market-icon {
+    font-size: 15px;
+}
+
+.market-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.market-name strong {
+    color: var(--white);
+    font-size: 13px;
+}
+
+.market-name span {
+    color: var(--muted);
+    font-size: 8px;
+}
+
+.market-price {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.market-price strong {
+    color: var(--white);
+    font-size: 14px;
+}
+
+.market-price span {
+    color: var(--green);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TERMINAL STATS
+========================= */
+
+.terminal-stats {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.terminal-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.terminal-stats span {
+    color: var(--muted);
+    font-size: 8px;
+}
+
+.terminal-stats strong {
+    color: var(--text);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   MARKET DROPDOWN
+========================= */
+
+.market-dropdown {
+    position: absolute;
+    top: 65px;
+    left: 16px;
+    z-index: 100;
+    width: 330px;
+    display: none;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background: #0b0f0d;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.market-dropdown.open {
+    display: block;
+}
+
+.market-search {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.market-search i {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.market-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--white);
+    font-size: 10px;
+}
+
+.market-search input::placeholder {
+    color: var(--muted);
+}
+
+.market-list {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.market-option {
+    width: 100%;
+    min-height: 55px;
+    padding: 9px 12px;
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+    background: transparent;
+    color: var(--white);
+    text-align: left;
+    cursor: pointer;
+}
+
+.market-option:hover,
+.market-option.active {
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.market-option-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.market-option-name strong {
+    color: var(--white);
+    font-size: 10px;
+}
+
+.market-option-name small {
+    color: var(--muted);
+    font-size: 8px;
+}
+
+.market-option-price {
+    color: var(--text);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+@media (max-width: 800px) {
+
+    .terminal-header {
+        align-items: flex-start;
+    }
+
+    .terminal-stats {
+        display: none;
+    }
+
+    .market-dropdown {
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(183, 243, 74, 0.22);
+    border-radius: 10px;
+    background: rgba(183, 243, 74, 0.05);
+}
+
+.logo-mark svg {
+    width: 27px;
+    height: 27px;
+    overflow: visible;
+}
+
+.sprout-stem {
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.sprout-leaf {
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 2.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ========================================
+   LIGHT / DARK MODE
+======================================== */
+
+/* LIGHT THEME */
+[data-theme="light"] {
+    --bg: #f7f9f6;
+    --bg-soft: #eef2ed;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f4ef;
+
+    --green: #6f9f18;
+    --green-bright: #7eaf20;
+
+    --white: #111510;
+    --text: #59615b;
+    --muted: #7b847d;
+
+    --border: rgba(0, 0, 0, 0.09);
+    --border-light: rgba(0, 0, 0, 0.14);
+}
+
+
+/* THEME BUTTON */
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--bg-card);
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--green);
+    border-color: rgba(183, 243, 74, 0.35);
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+}
+
+
+/* SMOOTH THEME TRANSITION */
+body,
+.navbar,
+.hero,
+.markets-section,
+.trade-section,
+.stats-section,
+.advantages-section,
+.cta-section,
+.footer,
+.terminal,
+.terminal-header,
+.terminal-body,
+.order-panel,
+.order-book,
+.recent-trades,
+.chart-container,
+.chart-footer,
+.market-dropdown,
+.order-field,
+.theme-toggle {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* LIGHT MODE OVERRIDES
+   For areas that currently use hard-coded dark colors.
+*/
+
+[data-theme="light"] .navbar {
+    background: rgba(247, 249, 246, 0.88);
+}
+
+[data-theme="light"] .terminal {
+    background: var(--bg-card);
+}
+
+[data-theme="light"] .terminal-header,
+[data-theme="light"] .chart-footer,
+[data-theme="light"] .order-book,
+[data-theme="light"] .recent-trades,
+[data-theme="light"] .order-panel {
+    background: var(--bg-card);
+}
+
+[data-theme="light"] .chart-container {
+    background: var(--bg-soft);
+}
+
+[data-theme="light"] .chart-grid {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.055) 1px, transparent 1px);
+}
+
+[data-theme="light"] .current-price {
+    color: #071006;
+}
+
+[data-theme="light"] .market-dropdown {
+    background: var(--bg-card);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .market-option:hover {
+    background: var(--bg-card-hover);
+}
+
+[data-theme="light"] .order-field {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .chart-y-axis span {
+    background: rgba(247, 249, 246, 0.8);
+}
+
+[data-theme="light"] .chart-toolbar {
+    background: var(--bg-card);
+}
+
+[data-theme="light"] .market-ticker {
+    background: var(--bg-soft);
+}
