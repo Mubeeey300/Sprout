@@ -3690,3 +3690,744 @@ body,
     }
 
 }
+
+
+/* =========================================================
+   SPROUT — PREMIUM ANIMATED SECTIONS
+========================================================= */
+
+.why-sprout-section,
+.fees-section,
+.referral-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   GLOBAL SECTION ATMOSPHERE
+========================================================= */
+
+.why-sprout-section::before,
+.fees-section::before,
+.referral-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(183, 243, 74, .035);
+    filter: blur(100px);
+    pointer-events: none;
+    animation: sectionGlow 8s ease-in-out infinite alternate;
+}
+
+.why-sprout-section::before {
+    left: -220px;
+    top: 15%;
+}
+
+.fees-section::before {
+    right: -220px;
+    top: 10%;
+}
+
+.referral-section::before {
+    left: 40%;
+    top: 20%;
+}
+
+@keyframes sectionGlow {
+    0% {
+        transform: translate(0, 0) scale(.9);
+        opacity: .5;
+    }
+
+    100% {
+        transform: translate(80px, 40px) scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.section-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.section-label::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green, #b7f34a);
+    box-shadow: 0 0 15px rgba(183, 243, 74, .8);
+    animation: labelPulse 2s infinite;
+}
+
+@keyframes labelPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(183, 243, 74, .5);
+    }
+
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 22px rgba(183, 243, 74, .9);
+    }
+}
+
+
+/* =========================================================
+   WHY SPROUT CARDS
+========================================================= */
+
+.why-sprout-grid {
+    position: relative;
+    z-index: 2;
+}
+
+.why-card {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, .055);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.008)
+        ),
+        rgba(11,15,13,.9);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.035);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* moving light across card */
+
+.why-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+    background: rgba(183,243,74,.09);
+    filter: blur(45px);
+    transition: .5s ease;
+}
+
+.why-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: -100%;
+    top: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(183,243,74,.7),
+        transparent
+    );
+    transition: left .8s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-12px) scale(1.015);
+
+    border-color: rgba(183,243,74,.28);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.45),
+        0 0 35px rgba(183,243,74,.055),
+        inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.why-card:hover::before {
+    transform: scale(1.7);
+    opacity: .8;
+}
+
+.why-card:hover::after {
+    left: 100%;
+}
+
+
+/* =========================================================
+   ICON ANIMATION
+========================================================= */
+
+.why-icon {
+    position: relative;
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        box-shadow .4s ease;
+}
+
+.why-icon::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: inherit;
+    border: 1px solid rgba(183,243,74,.15);
+    opacity: 0;
+    transform: scale(.8);
+    transition: .4s ease;
+}
+
+.why-card:hover .why-icon {
+    transform: translateY(-5px) rotate(-3deg);
+
+    box-shadow:
+        0 10px 30px rgba(183,243,74,.12);
+}
+
+.why-card:hover .why-icon::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.card-number {
+    transition:
+        color .4s ease,
+        transform .4s ease;
+}
+
+.why-card:hover .card-number {
+    color: rgba(183,243,74,.09);
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   FEATURED CARD
+========================================================= */
+
+.why-card.featured {
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(183,243,74,.11),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(183,243,74,.045),
+            rgba(11,15,13,.95)
+        );
+}
+
+
+/* =========================================================
+   FEES SECTION
+========================================================= */
+
+.fees-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.fee-display {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(183,243,74,.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.008)
+        ),
+        #0b0f0d;
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4),
+        0 0 50px rgba(183,243,74,.035),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    animation: feeFloat 6s ease-in-out infinite;
+}
+
+@keyframes feeFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* moving border */
+
+.fee-display::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    right: -100px;
+    bottom: -120px;
+    border-radius: 50%;
+    background: rgba(183,243,74,.08);
+    filter: blur(50px);
+    animation: feeGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes feeGlow {
+    from {
+        transform: scale(.8);
+    }
+
+    to {
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================================================
+   FEE MAIN
+========================================================= */
+
+.fee-main {
+    position: relative;
+}
+
+.fee-main h3 {
+    text-shadow:
+        0 0 30px rgba(183,243,74,.08);
+}
+
+.fee-label {
+    display: inline-flex;
+    padding: 6px 10px;
+    border: 1px solid rgba(183,243,74,.18);
+    border-radius: 30px;
+    background: rgba(183,243,74,.055);
+    box-shadow: 0 0 20px rgba(183,243,74,.04);
+}
+
+
+/* =========================================================
+   FEE BOXES
+========================================================= */
+
+.fee-row > div {
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255,255,255,.015);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.fee-row > div::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: -30px;
+    top: -30px;
+    border-radius: 50%;
+    background: rgba(183,243,74,.08);
+    filter: blur(20px);
+}
+
+.fee-row > div:hover {
+    transform: translateY(-5px);
+    border-color: rgba(183,243,74,.25);
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.fees-button,
+.referral-button {
+    position: relative;
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(183,243,74,.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.fees-button::before,
+.referral-button::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 150%;
+    top: -25%;
+    left: -100px;
+    transform: rotate(20deg);
+
+    background: rgba(255,255,255,.35);
+
+    transition: left .6s ease;
+}
+
+.fees-button:hover,
+.referral-button:hover {
+    transform: translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(183,243,74,.18);
+}
+
+.fees-button:hover::before,
+.referral-button:hover::before {
+    left: 120%;
+}
+
+
+/* =========================================================
+   REFERRAL CARD
+========================================================= */
+
+.referral-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(183,243,74,.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0c120e,
+            #080c09
+        );
+
+    border: 1px solid rgba(183,243,74,.14);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.5),
+        0 0 80px rgba(183,243,74,.035),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+/* animated shine */
+
+.referral-card::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -180px;
+    top: -150px;
+    border-radius: 50%;
+
+    border: 1px solid rgba(183,243,74,.08);
+
+    animation:
+        referralRing 8s linear infinite;
+}
+
+.referral-card::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(183,243,74,.055);
+    filter: blur(70px);
+
+    animation: referralGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes referralRing {
+    from {
+        transform: rotate(0deg) scale(.8);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+@keyframes referralGlow {
+    from {
+        transform: translateY(-50%) scale(.8);
+        opacity: .4;
+    }
+
+    to {
+        transform: translateY(-50%) scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   REFERRAL VISUAL
+========================================================= */
+
+.referral-visual {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* center */
+
+.referral-center {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,243,74,.13),
+            #10170e 65%
+        );
+
+    box-shadow:
+        0 0 40px rgba(183,243,74,.12),
+        0 0 100px rgba(183,243,74,.06);
+
+    animation: centerPulse 3s ease-in-out infinite;
+}
+
+@keyframes centerPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 40px rgba(183,243,74,.12),
+            0 0 100px rgba(183,243,74,.06);
+    }
+
+    50% {
+        transform: scale(1.07);
+        box-shadow:
+            0 0 60px rgba(183,243,74,.2),
+            0 0 120px rgba(183,243,74,.08);
+    }
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.referral-orbit {
+    border-color: rgba(183,243,74,.12);
+    box-shadow:
+        0 0 25px rgba(183,243,74,.025);
+
+    animation: orbitSpin 14s linear infinite;
+}
+
+.orbit-two {
+    animation-direction: reverse;
+    animation-duration: 20s;
+}
+
+@keyframes orbitSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   REFERRAL MINI CARDS
+========================================================= */
+
+.referral-mini-card {
+    backdrop-filter: blur(15px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border-color: rgba(255,255,255,.07);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.4),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.referral-mini-card:hover {
+    border-color: rgba(183,243,74,.3);
+    transform: translateY(-6px) scale(1.04);
+}
+
+
+/* individual floating movement */
+
+.mini-one {
+    animation: floatOne 4s ease-in-out infinite;
+}
+
+.mini-two {
+    animation: floatTwo 5s ease-in-out infinite;
+}
+
+.mini-three {
+    animation: floatThree 4.5s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatTwo {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes floatThree {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(8px, -10px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .why-card:hover {
+        transform: translateY(-7px);
+    }
+
+    .referral-card::after {
+        right: 50%;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .why-sprout-section,
+    .fees-section,
+    .referral-section {
+        padding: 80px 0;
+    }
+
+    .why-card {
+        min-height: 270px;
+    }
+
+    .fee-display {
+        animation: none;
+    }
+
+    .referral-card {
+        padding: 40px 24px;
+    }
+
+    .referral-visual {
+        height: 300px;
+        transform: scale(.82);
+        margin-top: 20px;
+    }
+
+    .orbit-two {
+        width: 290px;
+        height: 290px;
+    }
+
+    .referral-center {
+        width: 95px;
+        height: 95px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
