@@ -4752,3 +4752,713 @@ body,
         height: 215px;
     }
 }
+
+
+/* =========================================================
+   SPROUT — SECURITY & TRUST
+========================================================= */
+
+.security-section {
+    position: relative;
+    width: 100%;
+    padding: 90px 20px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(183, 243, 74, 0.07),
+            transparent 35%
+        ),
+        var(--bg);
+}
+
+/* Background Glow */
+
+.security-bg-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(183, 243, 74, 0.08),
+        transparent 65%
+    );
+    filter: blur(35px);
+    pointer-events: none;
+    animation: securityGlow 5s ease-in-out infinite;
+}
+
+@keyframes securityGlow {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+
+/* Container */
+
+.security-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.security-heading {
+    max-width: 650px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.security-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--green);
+
+    text-transform: uppercase;
+}
+
+.security-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+
+    box-shadow:
+        0 0 8px var(--green),
+        0 0 18px rgba(183, 243, 74, 0.5);
+
+    animation: securityDotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes securityDotPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.6;
+    }
+}
+
+.security-heading h2 {
+    margin: 0;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: var(--white);
+}
+
+.security-heading h2 span {
+    background: linear-gradient(
+        135deg,
+        #b7f34a,
+        #71d66b,
+        #42b8a3
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.security-heading p {
+    max-width: 540px;
+    margin: 20px auto 0;
+
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   MAIN SECURITY LAYOUT
+========================================================= */
+
+.security-layout {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 260px 1fr;
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   FEATURE COLUMNS
+========================================================= */
+
+.security-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.security-feature-left {
+    align-items: flex-end;
+}
+
+.security-feature-right {
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   SECURITY CARDS
+========================================================= */
+
+.security-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 330px;
+    min-height: 130px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 20px;
+
+    border: 1px solid rgba(183, 243, 74, 0.09);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.security-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        135deg,
+        rgba(183, 243, 74, 0.06),
+        transparent 50%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.security-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(183, 243, 74, 0.3);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(183, 243, 74, 0.07);
+}
+
+.security-card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.security-icon {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(183, 243, 74, 0.18),
+        rgba(66, 184, 163, 0.12)
+    );
+
+    border: 1px solid rgba(183, 243, 74, 0.18);
+
+    color: var(--green);
+
+    box-shadow:
+        0 0 20px rgba(183, 243, 74, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.security-card:hover .security-icon {
+    transform: scale(1.08) rotate(-4deg);
+
+    box-shadow:
+        0 0 25px rgba(183, 243, 74, 0.15);
+}
+
+.security-icon i {
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.security-card h3 {
+    position: relative;
+    z-index: 1;
+
+    margin: 2px 0 7px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    color: var(--white);
+}
+
+.security-card p {
+    position: relative;
+    z-index: 1;
+
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.65;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   CENTER SECURITY CORE
+========================================================= */
+
+.security-core {
+    position: relative;
+
+    width: 260px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+}
+
+
+/* Glow */
+
+.security-core-glow {
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: rgba(183, 243, 74, 0.16);
+
+    filter: blur(35px);
+
+    animation: coreGlow 3s ease-in-out infinite;
+}
+
+@keyframes coreGlow {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+/* Rings */
+
+.security-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(183, 243, 74, 0.13);
+}
+
+.security-ring-one {
+    width: 190px;
+    height: 190px;
+
+    animation: securityRotate 15s linear infinite;
+}
+
+.security-ring-two {
+    width: 235px;
+    height: 235px;
+
+    border-style: dashed;
+    border-color: rgba(66, 184, 163, 0.12);
+
+    animation: securityRotateReverse 20s linear infinite;
+}
+
+@keyframes securityRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes securityRotateReverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   SHIELD
+========================================================= */
+
+.security-shield {
+    position: relative;
+    z-index: 5;
+
+    width: 92px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    clip-path: polygon(
+        50% 0%,
+        91% 14%,
+        91% 55%,
+        78% 78%,
+        50% 100%,
+        22% 78%,
+        9% 55%,
+        9% 14%
+    );
+
+    background: linear-gradient(
+        145deg,
+        #b7f34a 0%,
+        #71d66b 50%,
+        #42b8a3 100%
+    );
+
+    box-shadow:
+        0 0 30px rgba(183, 243, 74, 0.3);
+
+    animation: shieldFloat 3.5s ease-in-out infinite;
+}
+
+.security-shield::before {
+    content: "";
+
+    position: absolute;
+    inset: 2px;
+
+    clip-path: inherit;
+
+    background: #091008;
+}
+
+.security-shield i {
+    position: relative;
+    z-index: 2;
+
+    font-size: 38px;
+
+    color: #b7f34a;
+
+    filter:
+        drop-shadow(0 0 8px rgba(183, 243, 74, 0.5));
+}
+
+@keyframes shieldFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+
+/* =========================================================
+   SECURITY STATUS
+========================================================= */
+
+.security-status {
+    position: absolute;
+
+    bottom: 5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(183, 243, 74, 0.12);
+    border-radius: 999px;
+
+    background: rgba(8, 11, 9, 0.8);
+
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.security-status span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #b7f34a;
+
+    box-shadow:
+        0 0 8px rgba(183, 243, 74, 0.8);
+
+    animation: statusPulse 1.5s infinite;
+}
+
+@keyframes statusPulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+/* =========================================================
+   BOTTOM TRUST BAR
+========================================================= */
+
+.security-bottom {
+    max-width: 720px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 55px auto 0;
+
+    padding: 12px;
+
+    border: 1px solid rgba(183, 243, 74, 0.08);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.015);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.security-bottom-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    flex: 1;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    color: var(--muted);
+}
+
+.security-bottom-item i {
+    color: var(--green);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .security-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .security-core {
+        order: -1;
+
+        width: 240px;
+        height: 260px;
+    }
+
+    .security-feature-left,
+    .security-feature-right {
+        align-items: center;
+    }
+
+    .security-feature {
+        width: 100%;
+    }
+
+    .security-card {
+        max-width: 500px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .security-section {
+        padding: 65px 15px;
+    }
+
+    .security-heading {
+        margin-bottom: 45px;
+    }
+
+    .security-heading h2 {
+        font-size: 35px;
+        letter-spacing: -1.5px;
+    }
+
+    .security-heading p {
+        font-size: 12px;
+    }
+
+    .security-core {
+        width: 210px;
+        height: 235px;
+    }
+
+    .security-ring-one {
+        width: 165px;
+        height: 165px;
+    }
+
+    .security-ring-two {
+        width: 205px;
+        height: 205px;
+    }
+
+    .security-shield {
+        width: 78px;
+        height: 90px;
+    }
+
+    .security-shield i {
+        font-size: 31px;
+    }
+
+    .security-card {
+        min-height: auto;
+        padding: 17px;
+    }
+
+    .security-card h3 {
+        font-size: 14px;
+    }
+
+    .security-card p {
+        font-size: 10.5px;
+    }
+
+    .security-bottom {
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .security-bottom-item {
+        width: 100%;
+    }
+}
